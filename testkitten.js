@@ -6,10 +6,12 @@ module.exports = ops => {
     const SUCCESSICON = '\u2705';
     const FAILUREICON = '\u274c';
     let counter = 0;
+    let skipCount = 0;
     for (each of ops) {
         let name;
         if (typeof each === 'string') {
             console.log(`[ INFO ] ${each}`);
+            ++skipCount;
             continue;
         }
         
@@ -34,9 +36,12 @@ module.exports = ops => {
         }
     }
 
-    const allPassed = counter === ops.length;
+    const executed = ops.length - skipCount;
+
+    const allPassed = counter === executed;
+    const failed = executed - counter;
     const result = allPassed ? SUCCESSICON : FAILUREICON;
-    console.log(`${result} Executed ${ops.length}, succeed: ${counter}, failed: ${ops.length-counter}`);
+    console.log(`${result} Executed ${executed}, succeed: ${counter}, failed: ${failed}`);
 
     function callCheck(check) {
         let mark = check.mark ? `${check.mark}:` : '';

@@ -1,6 +1,6 @@
 {
   "name": "testkitten",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Very basic test framework",
   "main": "testkitten.js",
   "scripts": {
