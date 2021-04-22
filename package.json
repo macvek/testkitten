@@ -1,0 +1,11 @@
+{
+  "name": "testkitten",
+  "version": "0.0.1",
+  "description": "Very basic test framework",
+  "main": "testkitten.js",
+  "scripts": {
+    "test": "node alltests.spec.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
