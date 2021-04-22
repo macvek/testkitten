@@ -6,6 +6,8 @@
   "scripts": {
     "test": "node alltests.spec.js"
   },
-  "author": "",
+  "homepage": "https://github.com/macvek/testkitten",
+  "repository": "https://github.com/macvek/testkitten",
+  "author": "Maciej Aleksandrowicz <macvek@gmail.com>",
   "license": "ISC"
 }
