@@ -77,12 +77,10 @@ module.exports = ops => {
             let expected = jsonCopy(check.assertJsonEquals[0]);
             let got = jsonCopy(check.assertJsonEquals[1]);
            
-            let sortedExpected = sortAttributes(expected);
-            let sortedGot = sortAttributes(got);
+            let sortedExpected = JSON.stringify(sortAttributes(expected));
+            let sortedGot = JSON.stringify(sortAttributes(got));
 
-            console.log(sortedExpected);
-            console.log(sortedGot);
-            if (JSON.stringify(sortedExpected) !== JSON.stringify(sortedGot)) {
+            if (sortedExpected !== sortedGot) {
                 throw `${mark}check.assertJsonEquals failed expected sorted objects to be equal; expected:\`${sortedExpected}\`, given: \`${sortedGot }\``
             }
         }
